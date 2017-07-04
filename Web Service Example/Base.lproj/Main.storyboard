@@ -36,6 +36,9 @@
                             <constraint firstItem="Rx0-WF-q5K" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gKv-fS-nWJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="forcastLabel" destination="Rx0-WF-q5K" id="uQ1-u9-y2h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
