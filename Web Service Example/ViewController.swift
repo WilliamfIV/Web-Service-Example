@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var forcastLabel: UILabel!
     
     
@@ -22,12 +24,16 @@ class ViewController: UIViewController {
     
     let manager = AFHTTPSessionManager()
     
-    manager.get("http://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=json&units=metric&cnt=1&appid=1cfc3768d72b5eba2ed50a80f10ea48a",
+    manager.get("http://api.openweathermap.org/data/2.5/forecast/daily?q=Fairfax&mode=json&units=metric&cnt=1&appid=1cfc3768d72b5eba2ed50a80f10ea48a",
         parameters: nil,
         progress: nil,
         success: {  (operation: URLSessionDataTask, responseObject: Any?) in
             if let responseObject = responseObject {
                 print("Response: " + (responseObject as AnyObject).description)
+                let json = JSON(responseObject)
+                if let forecast = json["list"][0]["weather"][0]["description"].string {
+                    self.forcastLabel.text = forecast
+                }
             }
     })  { (operation: URLSessionDataTask?, error: Error) in
         print("Error: " + error.localizedDescription)
