@@ -37,6 +37,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="8bC-Xf-vdC" id="9Mq-Eq-DV7"/>
                         <outlet property="forcastLabel" destination="Rx0-WF-q5K" id="uQ1-u9-y2h"/>
                     </connections>
                 </viewController>

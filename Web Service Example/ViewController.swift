@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var forcastLabel: UILabel!
+  
     
     
     override func viewDidLoad() {
@@ -35,15 +36,17 @@ class ViewController: UIViewController {
                     self.forcastLabel.text = forecast
                 }
             }
-    })  { (operation: URLSessionDataTask?, error: Error) in
+    }) { (operation: URLSessionDataTask?, error: Error) in
         print("Error: " + error.localizedDescription)
     }
 }
-
     
-   
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    
 }
-
